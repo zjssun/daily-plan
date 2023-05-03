@@ -1,0 +1,76 @@
+.PlanItemTop{
+    box-sizing: border-box;
+    padding: 0 0rpx;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.block{
+    width: 100%;
+    margin-bottom: 20rpx;
+}
+.PlanItem{
+    box-sizing: border-box;
+    padding: 0 0rpx;
+    width: 100%;
+    height: 95rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.PlanItem.active{
+    padding: 0 10rpx;
+    transition: all 0.3s ease-in;
+}
+.PlanItem .addBtn{
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    font-size: 40rpx;
+    background: linear-gradient(315deg, #0061a1, #005287);
+    transition: all 0.3s ease-in;
+}
+.PlanItem .addBtn.active{
+    padding: 0;
+    margin: 0;
+    width: 20%;
+    height: 90%;
+    font-size: 40rpx;
+    background: #6497b1;
+    transition: all 0.3s ease-in;
+}
+.PlanItem .textInput{
+    width: 0%;
+    transition: all 0.3s ease-in;
+}
+.PlanItem .textInput.active{
+    width: 80%;
+    transition: all 0.3s ease-in;
+}
+.PlanItem .addBtn_hover{
+    width: 99%;
+    height: 98%;
+    background: linear-gradient(315deg, #0072be, #01548b);
+    transition: all 0.2s ease-in;
+}
+.picker{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 35rpx;   
+}
+.dateClean{
+    margin-right: 15rpx;
+}
+.createDate{
+    margin-top: 10rpx;
+    width: 100%;
+    height:50rpx;
+}

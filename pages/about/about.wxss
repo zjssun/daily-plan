@@ -1,0 +1,60 @@
+.aboutCon{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    gap: 50rpx;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(43deg, #4158d0 0%, #c850c0 46%, #ffcc70 100%);
+    background-size: 300%;
+    transition: all 1s;
+    animation: 8s ani infinite;
+}
+.text{
+    font-size: 40rpx;
+    font-weight: bold;
+    color: whitesmoke;
+}
+.content{
+    font-size: 35rpx;
+    font-weight: bold;
+    color: whitesmoke;
+}
+.pic{
+    width: 130rpx;
+    height: 130rpx;
+}
+.img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+
+}
+.feedBtn{
+    background: transparent;
+    color: whitesmoke;
+    font-size: 38rpx;
+    transition: 0.3s ease;
+    border-radius: 20rpx;
+}
+.give{
+    padding: 0;
+    background: transparent;
+    color: whitesmoke;
+    font-size: 38rpx;
+}
+@keyframes ani {
+    0% {
+      background-position: 0%;
+    }
+  
+    50% {
+      background-position: 100%;
+    }
+  
+    100% {
+      background-position: 0%;
+    }
+  }
+  

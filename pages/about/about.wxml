@@ -1,0 +1,9 @@
+<view class="aboutCon">
+    <view class="pic">
+        <image class="img" src="/images/1.jpg" mode=""/>
+    </view>
+    <text class="text">作者：SamRol</text>
+    <text class="content">邮箱：1628526495@qq.com</text>
+    <button class="feedBtn" open-type="feedback">意见反馈</button>
+    <button class="give" bindtap="showGive">请小作者喝杯咖啡</button>
+</view>

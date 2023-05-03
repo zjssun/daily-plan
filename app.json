@@ -1,0 +1,34 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/my/my",
+    "pages/about/about"
+  ],
+  "tabBar": {
+    "selectedColor": "#03396c",
+    "list": [
+        {
+            "pagePath": "pages/index/index",
+            "text": "每日计划",
+            "iconPath": "/images/notes-medical-solid.png",
+            "selectedIconPath": "/images/notes-medical-solid-select.png"
+
+        },
+        {
+            "pagePath": "pages/my/my",
+            "text":"我的",
+            "iconPath": "/images/user.png",
+            "selectedIconPath": "/images/user-select.png"
+        }
+    ]
+  },
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#03396c",
+    "navigationBarTitleText": "Daily计划",
+    "navigationBarTextStyle":"white"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

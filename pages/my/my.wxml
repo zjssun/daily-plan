@@ -1,0 +1,24 @@
+<view class="container">
+    <view class="PlanList">
+        <view class="saveCon {{item.IsChild ?'active':''}}" wx:for="{{template}}" wx:key="index">
+            <block wx:if="{{item.IsChild}}">
+                <scroll-view class="PlanShow" scroll-y="true">
+                    <view class="PlanItem" wx:for="{{item.planList}}" wx:key="index">
+                        {{item.date}}
+                        <view wx:for="{{item.PlanItem}}" wx:key="index">
+                            {{item.inputVal}}
+                        </view>
+                    </view>
+                </scroll-view>
+                <view class="child">
+                    <button class="childBtn" hover-class="" bindtap="clearBtn" data-idx="{{index}}">清除</button>
+                    <button class="childBtn" hover-class="" bindtap="applyBtn" data-idx="{{index}}">应用</button>
+                </view>
+            </block>
+            <block wx:if="{{item.IsFar}}">
+                <button class="saveBtn" hover-class="addBtn_hover" bindtap="onSave" data-idx="{{index}}">保存计划模板</button>
+            </block>
+        </view>
+    </view>
+</view>
+<navigator class="" open-type="reLaunch" url="/pages/about/about" class="about">关于</navigator>

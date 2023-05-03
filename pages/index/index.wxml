@@ -1,0 +1,23 @@
+<view class="container">
+    <view class="PlanList">
+        <view wx:for="{{PlanList}}" wx:for-index="Lidx" wx:key="Lidx" class="block">
+            <view class="picker">
+                <picker mode="date" start="2015-09-01" end="2100-09-01" value="{{item.date}}" data-idx="{{Lidx}}" bindchange="DateChange">
+                    {{item.date}}
+                </picker>
+                <view class="dateClean" bindtap="clearDate" data-lidx="{{Lidx}}" wx:if="{{Lidx>0}}">
+                    X
+                </view>
+            </view>
+            <view class="PlanItemTop {{item.inputIs?'active':''}}" wx:for="{{item.PlanItem}}" wx:for-index="idx" wx:key="idx">
+                <view class="PlanItem" style="background:{{item.bgc}}"> 
+                    <input class="textInput {{item.inputIs?'active':''}}" value="{{item.inputVal}}" focus="{{item.inputIs}}" bindblur="InpDone" type="text" placeholder="What plan?" bindconfirm="InpDone" data-idx="{{idx}}" data-lidx="{{Lidx}}" disabled="{{item.inputDis}}"/>
+                    <button class="addBtn {{item.inputIs?'active':''}}" hover-class="addBtn_hover" bindtap="AddPlan" data-idx="{{idx}}" data-lidx="{{Lidx}}">{{item.BtnText}}</button>
+                </view>
+            </view>
+            <view class="createDate" bindtap="addDate" data-lidx="{{Lidx}}"  wx:if="{{item.dateIs}}">
+                新建日期
+            </view>
+        </view>
+    </view>
+</view>
