@@ -4,6 +4,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    inputVal:"",
     PlanList:{
         0:{
             date:'',
@@ -24,14 +25,18 @@ Page({
   AddPlan(e){
       let IDX = e.currentTarget.dataset.idx
       let nextIDX = parseInt(IDX)+1
-      console.log(e);
       let ListIDX = e.currentTarget.dataset.lidx
       let lastIDX = parseInt(IDX)-1
+      let val = this.data.inputVal
       let temp = this.data.PlanList
       //注入active
       if(this.data.PlanList[ListIDX].PlanItem[IDX].inputIs==false){
         temp[ListIDX].PlanItem[IDX].inputIs = true
         temp[ListIDX].PlanItem[IDX].BtnText = "-"
+        if(IDX>0){
+            temp[ListIDX].PlanItem[IDX-1].inputVal = val
+            temp[ListIDX].PlanItem[IDX-1].inputDis = true
+        }
         //给对象添加属性
         if(nextIDX  == Object.getOwnPropertyNames(temp[ListIDX].PlanItem).length){
             Object.assign(temp[ListIDX].PlanItem,{[nextIDX]:{inputIs:false,BtnText:"+",inputDis:false,inputVal:"",inputDis:false,bgc:"#e0e0e0cc"}})
@@ -62,9 +67,15 @@ Page({
       }
       console.log(temp);
   },
+  //input输入时
+  InpIn(e){
+      let val = e.detail.value
+      this.setData({
+        inputVal:val
+      })
+  },
   //点击键盘上完成按钮
   InpDone(e){
-    console.log(e)
     let IDX = e.currentTarget.dataset.idx
     let temp = this.data.PlanList
     let ListIDX = e.currentTarget.dataset.lidx
@@ -99,8 +110,13 @@ Page({
     })
     wx.setStorageSync('key',this.data.PlanList)
   },
+  //清除日期
   clearDate(e){
     let temp = this.data.PlanList
+    let ListIDX = e.currentTarget.dataset.lidx
+    for(let i = parseInt(ListIDX);i<Object.getOwnPropertyNames(temp).length;i++){
+        temp[i] = temp[i+1]
+    }
     delete temp[parseInt(Object.getOwnPropertyNames(temp).length)-1]
     temp[parseInt(Object.getOwnPropertyNames(temp).length)-1].dateIs = true
     this.setData({
