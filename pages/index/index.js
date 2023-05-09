@@ -36,6 +36,9 @@ Page({
         if(IDX>0){
             temp[ListIDX].PlanItem[IDX-1].inputVal = val
             temp[ListIDX].PlanItem[IDX-1].inputDis = true
+            this.setData({
+                inputVal:""
+            })
         }
         //给对象添加属性
         if(nextIDX  == Object.getOwnPropertyNames(temp[ListIDX].PlanItem).length){
