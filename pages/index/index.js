@@ -33,13 +33,6 @@ Page({
       if(this.data.PlanList[ListIDX].PlanItem[IDX].inputIs==false){
         temp[ListIDX].PlanItem[IDX].inputIs = true
         temp[ListIDX].PlanItem[IDX].BtnText = "-"
-        if(IDX>0){
-            temp[ListIDX].PlanItem[IDX-1].inputVal = val
-            temp[ListIDX].PlanItem[IDX-1].inputDis = true
-            this.setData({
-                inputVal:""
-            })
-        }
         //给对象添加属性
         if(nextIDX  == Object.getOwnPropertyNames(temp[ListIDX].PlanItem).length){
             Object.assign(temp[ListIDX].PlanItem,{[nextIDX]:{inputIs:false,BtnText:"+",inputDis:false,inputVal:"",inputDis:false,bgc:"#e0e0e0cc"}})
